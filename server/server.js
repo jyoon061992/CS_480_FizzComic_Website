@@ -3,14 +3,28 @@
 /**
  * Module dependencies.
  */
-
 var app = require('./app');
 var debug = require('debug')('express-react:server');
 var http = require('http');
-
 /**
  * Get port from environment and store in Express.
  */
+ var mysql = require('mysql');
+ var con = mysql.createConnection({
+    host: 'us-cdbr-iron-east-04.cleardb.net',
+    user: 'bb353640536722',
+    password: 'f408fb6c',
+    database: 'heroku_f8d562e61e70440',
+    pool: { maxConnections: 50, maxIdleTime: 300}
+ });
+
+ con.connect(function(error){
+    if(!!error){
+        console.log('Error');
+    }else{
+        console.log('Connected');
+    }
+ });
 
 var port = normalizePort(process.env.PORT || '3001');
 app.set('port', port);
