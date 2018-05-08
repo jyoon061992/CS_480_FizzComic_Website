@@ -5,20 +5,6 @@ var http = require('http');
 /**
  * Get port from environment and store in Express.
  */
- // var mysql = require('mysql');
- // var pool  = mysql.createPool({
- //   host     : 'us-cdbr-iron-east-04.cleardb.net',
- //   user     : 'bb353640536722',
- //   password : 'f408fb6c',
- //   database : 'heroku_f8d562e61e70440'
- // });
- //
- // app.get('/api/newsfeed', (req, res) => {
- //
- // });
-//  app.listen(5000, function(){
-//   console.log('Server started on Port 5000');
-// });
 var port = normalizePort(process.env.PORT || '3001');
 app.set('port', port);
 

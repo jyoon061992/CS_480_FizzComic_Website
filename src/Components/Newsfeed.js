@@ -36,7 +36,7 @@ class Newsfeed extends Component {
         submit
         </button>
         </p>
-        <h5>Current account database</h5>
+        <h5>Newsfeed</h5>
         <ul>
           {this.state.comics.map(comics => {
             return <Comicbook comics= {comics}/>;
