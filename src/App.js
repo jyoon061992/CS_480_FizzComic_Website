@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Login from './Components/Login';
+import Newsfeed from './Components/Newsfeed';
 class App extends Component {
   constructor() {
     super();
@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <Login/>
+      <Newsfeed/>
       </div>
     );
   }
