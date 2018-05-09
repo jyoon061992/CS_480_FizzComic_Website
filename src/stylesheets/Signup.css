@@ -1,0 +1,63 @@
+.login-form{
+
+	background-color: #d2e0dc;
+	width: 350px;
+	height: 150px;
+	position: relative;
+	left: 840px;
+}
+
+.form{
+
+	padding: 10px 60px;
+	font-size: 12px;
+	text-align: center;
+}
+
+.login-form p1{
+
+	position: relative;
+	left: 10px;
+	font-size: px;
+}
+
+.login-form p2{
+
+	position: relative;
+	left: 10px;
+}
+
+.login-form p3{
+
+	position: relative;
+	right: 120px;
+	margin-left: 10px;
+	margin-right: 10px;
+	top: 40px;
+
+
+}
+
+.login-form p4{
+
+	position: relative;
+	left: 250px;
+	bottom: 77px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.login-form h3{
+
+	text-align: center;
+	position: relative;
+	top: 1000px;
+	font: arial;
+}
+
+.sign-in{
+
+	padding: 32px 20px;
+	background-color: white;
+	border: none;
+}
