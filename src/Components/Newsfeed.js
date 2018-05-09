@@ -12,7 +12,7 @@ class Newsfeed extends Component {
       .then(result => result.json(), console.log(this.result))
       .then(json => {this.setState({comics:json});
     });
-   }
+  };
   render() {
     return (
       <div className="feed">

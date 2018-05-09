@@ -22,4 +22,19 @@ router.get('/comics', function(req, res, next) {
     });
   });
 });
+router.post('/login', function(req, res, next) {
+  pool.getConnection(function(err, connection) {
+    // Use the connection
+    console.log(req.body.user);
+    var email=req.body.user.email;
+    var password=req.body.user.pass;
+    connection.query('INSERT INTO accounts (email,password) VALUES (\''+ String(email)+'\''+ ',\''+ String(password)+'\');', function (error, results, fields) {
+      // And done with the connection.
+      connection.release();
+      // Handle error after the release.
+      if (error) throw error;
+      // Don't use the connection here, it has been returned to the pool.
+    });
+ });
+});
 module.exports = router;

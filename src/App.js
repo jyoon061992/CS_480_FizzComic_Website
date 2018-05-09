@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Newsfeed from './Components/Newsfeed';
 import Searchbar from './Components/Searchbar';
+import PersonList from './Components/Login';
 import Signup from './Components/Signup';
 //import Pagelogin from './login_page';
 import "./App.css"
@@ -20,9 +21,9 @@ class App extends Component {
                       <li><a href="">User Profile</a></li>
                     </ul>
                   </nav>
-<Searchbar/>
             </div>
-            <Signup/>
+            <div className = "bar"><PersonList/></div>
+
           <Newsfeed/>
           </div>
     );
