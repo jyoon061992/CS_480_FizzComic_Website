@@ -4,18 +4,22 @@ import axios from 'axios';
 class PersonList extends React.Component {
   state = {
     email: '',
-    pass: ' '
+    pass: ' ',
+    firstname: ' ',
+    lastname: ' '
   }
 
   handleChange = event => {
-    this.setState({ email: event.target.value, pass:event.target.value });
+    this.setState({ email: event.target.value, pass:event.target.value, firstname:event.target.value , lastname:event.target.value });
   }
 
   handleSubmit = event => {
 
     const user = {
       email: this.state.email,
-      pass: this.state.pass
+      pass: this.state.pass,
+      firstname: this.state.firstname,
+      lastname: this.state.lastname
     };
 
     axios.post(`api/login`, { user })
@@ -28,28 +32,42 @@ class PersonList extends React.Component {
   render() {
     return (
       <div>
-      <p1>
-      <input className ="form"
+        <p>
+        <input className ="form-firt"
+        type ="text"
+        placeholder ="First Name"
+        onChange = {event => this.setState({firstname: event.target.value})}
+        />
+        </p>
+        <p>
+        <input className ="form-last"
+        type ="text"
+        placeholder ="Last Name"
+        onChange = {event => this.setState({lastname: event.target.value})}
+        />
+        </p>
+      <p>
+      <input className ="form-email"
       type ="text"
       placeholder ="email"
       onChange = {event => this.setState({email: event.target.value})}
       />
-      </p1>
-      <p2>
-      <input className ="form"
+      </p>
+      <p>
+      <input className ="form-password"
       type ="password"
       placeholder ="password"
       onChange = {event => this.setState({pass: event.target.value})}
       />
-      </p2>
-      <p3>
+      </p>
+      <p>
       <button className ="submit-button"
       type ="button"
       onClick = {event => this.handleSubmit()}
       >
-      Add user
+      Sign Up
       </button>
-      </p3>
+      </p>
       </div>
     )
   }

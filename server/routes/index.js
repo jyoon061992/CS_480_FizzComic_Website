@@ -28,7 +28,10 @@ router.post('/login', function(req, res, next) {
     console.log(req.body.user);
     var email=req.body.user.email;
     var password=req.body.user.pass;
-    connection.query('INSERT INTO accounts (email,password) VALUES (\''+ String(email)+'\''+ ',\''+ String(password)+'\');', function (error, results, fields) {
+    var firstname=req.body.user.firstname;
+    var lastname=req.body.user.lastname;
+    connection.query('INSERT INTO accounts (firstname,lastname, email, password) VALUES (\''
+    + String(firstname)+'\''+ ',\''+ String(lastname)+'\',\'' + String(email)+'\',\''+ String(password)+'\');', function (error, results, fields) {
       // And done with the connection.
       connection.release();
       // Handle error after the release.
