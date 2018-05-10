@@ -4,3 +4,8 @@
 	bottom: 18px;
 
 }
+.feed-title {
+    background-color: #FFAA3B;
+    padding: 0.5em 1em;
+    box-decoration-break: clone;
+}

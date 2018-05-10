@@ -11,7 +11,7 @@ const Comicbook = (props) => {
           Writers: {props.comics.writers}
         </div>
         <div className="coverart">
-          <img key={props.comics.id} src={props.comics.coverArt}/>
+          <img key={props.comics.series} src={props.comics.coverArt}/>
         </div>
       </div>
     </li>

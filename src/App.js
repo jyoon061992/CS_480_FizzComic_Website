@@ -1,33 +1,30 @@
-import React, { Component } from 'react';
 import Newsfeed from './Components/Newsfeed';
-import Searchbar from './Components/Searchbar';
 import PersonList from './Components/Login';
 import Signup from './Components/Signup';
-//import Pagelogin from './login_page';
+import Searchbar from './Components/Searchbar';
 import "./App.css"
-class App extends Component {
-  render() {
-    return (
-      <div>
-          <header>
-
-            <div className = "top_header"></div>
-          </header>
-            <div className = "top-menu">
-                   <nav>
-                    <ul>
-                      <li><a href="">Home</a></li>
-                      <li><a href="">Comic Search</a></li>
-                      <li><a href="">User Profile</a></li>
-                    </ul>
-                  </nav>
-            </div>
-            <div className = "bar"><PersonList/></div>
-
-          <Newsfeed/>
+import React from 'react'
+import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
+const Main = () => (
+        <Router>
+            <div className ="main-background">
+              <header>
+                <div className = "top_header"></div>
+              <nav>
+              <ul>
+                  <Link to="/">Home </Link>
+                  <Link to="/search">Search </Link>
+                  <Link to="/profile">User Profile </Link>
+                  <Link to="/register">Login/Signup </Link>
+                  <Link to="/account">Account </Link>
+              </ul>
+              </nav>
+              </header>
+              <Route exact path="/" render={() => <Newsfeed/>}/>
+              <Route  path="/search" render={() => <Searchbar/>}/>
+              <Route exact path="/register" render={() => <Signup/>}/>
           </div>
+        </Router>
     );
-  }
-}
 
-export default App ;
+export default Main ;

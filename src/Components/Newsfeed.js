@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import './Login.css';
 import Comicbook from './Comicbook';
 import "../stylesheets/newsfeed.css"
 class Newsfeed extends Component {
@@ -16,10 +15,10 @@ class Newsfeed extends Component {
   render() {
     return (
       <div className="feed">
-        <h4>News feed</h4>
+        <h4 className="feed-title">News feed</h4>
         <ul>
           <div className= "coverart">
-          {this.state.comics.map(comics => {return <Comicbook key={comics.id}comics= {comics}/>;})}
+          {this.state.comics.map(comics => {return <Comicbook key={comics.id} comics= {comics}/>;})}
           </div>
         </ul>
       </div>
@@ -27,37 +26,3 @@ class Newsfeed extends Component {
   }
 }
 export default Newsfeed;
-
-// import React, { Component } from 'react';
-// //import './Login.css';
-// import Comicbook from './Comicbook';
-// import './style_newsfeeds.css'
-// import Sign_Up from './Sign_Up';
-//
-// class Newsfeed extends Component {
-//   constructor() {
-//     super();
-//     this.state = { comics: [] };
-//   }
-//   componentDidMount(){
-//     fetch('/api/newsfeed')
-//       .then(result => result.json())
-//       .then(json => {this.setState({comics:json});
-//     });
-//    }
-//   render() {
-//     return (
-//       <
-//
-//         <div className = "newspage">
-//         <ul>
-//           {this.state.comics.map(comics => {
-//             return <Comicbook comics= {comics}/>;
-//           })}
-//         </ul>
-//       </div>
-//     </div>
-//     );
-//   }
-// }
-// export default Newsfeed;

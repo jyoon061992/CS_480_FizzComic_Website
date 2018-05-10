@@ -1,34 +1,42 @@
-header{
+.main-background{
+  background-color: #b3ecff;
+  border: solid 10px;
+  border-style: groove;
+}
 
-  background: white;
+ul {
+  list-style: none;
+  margin: 0 2px;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+
+}
+.top_header{
+
   height: 120px;
   margin-bottom: 30px;
   background-image: url('./log.png');
   background-repeat: no-repeat;
   background-size: 175px, 175px;
-  background-position: left;
+  background-position: center;
 }
 
 header section {
-  width: 960px;
+  width: 96px;
   margin: 0 auto;
 }
 
-header li {
-
-
-}
-
-.top-menu{
+nav {
 
 	background-color: lightgrey;
-	border: solid 5px;
+	border: solid 2px;
 }
 .top-menu li{
   background-color: lightgrey;
   display: inline-block;
-  margin-right: 10px;
-  font-size: 20px;
+  margin-right: 100px;
+  font-size: 2px;
   margin-left: 200px;
 
 

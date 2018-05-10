@@ -4,7 +4,6 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const index = require('./routes/index');
-const login = require('./routes/Login');
 const app = express();
 
 // uncomment after placing your favicon in /public
