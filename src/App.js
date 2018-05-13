@@ -2,6 +2,7 @@ import Newsfeed from './Components/Newsfeed';
 import PersonList from './Components/Login';
 import Signup from './Components/Signup';
 import Searchbar from './Components/Searchbar';
+import Timeline from './Components/Timeline'
 import "./App.css"
 import React from 'react'
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
@@ -23,6 +24,7 @@ const Main = () => (
               <Route exact path="/" render={() => <Newsfeed/>}/>
               <Route  path="/search" render={() => <Searchbar/>}/>
               <Route exact path="/register" render={() => <Signup/>}/>
+              <Route exact path ="/profile" render={() => <Timeline/>}/>
           </div>
         </Router>
     );

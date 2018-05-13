@@ -1,0 +1,70 @@
+.row:after{
+
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.profileForm{
+
+  float: left;
+  width: 26%;
+  box-sizing: border-box;
+  background-color: white;
+  margin-top: 8px;
+  margin-left: 5px;
+  box-shadow: 10px 10px 5px grey;
+}
+
+.profileForm h1{
+
+  font-size: 16px;
+  text-align: center;
+}
+
+.inputForm{
+
+  margin: 10px;
+  float: right;
+  width: 70%;
+}
+
+.statInput{
+
+  padding: 15px 150px;
+}
+
+.statButton{
+
+  padding: 18px 20px;
+}
+
+.statNews{
+
+  float: right;
+  width: 72%;
+  margin-bottom: 20px;
+}
+
+.statNews h2{
+
+  font-size: 16px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.statUser{
+
+  box-sizing: border-box;
+  overflow: visible;
+  width: 60%;
+  box-shadow: 10px 10px 5px grey;
+  background-color: white;
+}
+
+.likeButton, .commButton{
+
+  padding: 20px 20px;
+  margin: 10px;
+  background-color: orange;
+}
