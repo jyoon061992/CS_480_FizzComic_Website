@@ -9,10 +9,11 @@ var pool  = mysql.createPool({
   database : 'heroku_f8d562e61e70440'
 });
 
-router.get('/comics', function(req, res, next) {
+router.get('/loadposts', function(req, res, next) {
   pool.getConnection(function(err, connection) {
     // Use the connection
-    connection.query('select * from comics', function (error, results, fields) {
+    var userid = 82;
+    connection.query("select * from " + String(userid) + "posts order by id DESC", function (error, results, fields) {
       return res.json(results)
       // And done with the connection.
       connection.release();
@@ -22,22 +23,38 @@ router.get('/comics', function(req, res, next) {
     });
   });
 });
-router.post('/login', function(req, res, next) {
+
+
+router.get('/makepost', function(req, res, next) {
   pool.getConnection(function(err, connection) {
     // Use the connection
-    console.log(req.body.user);
-    var email=req.body.user.email;
-    var password=req.body.user.pass;
-    var firstname=req.body.user.firstname;
-    var lastname=req.body.user.lastname;
-    connection.query('INSERT INTO accounts (firstname,lastname, email, password) VALUES (\''
-    + String(firstname)+'\''+ ',\''+ String(lastname)+'\',\'' + String(email)+'\',\''+ String(password)+'\');', function (error, results, fields) {
+    var userid = 82; // get user id
+    var content = req.body.user.content;
+    var dataposted = new Date();
+
+    connection.query("insert into " + String(userid) + "posts (content, dateposted) values (" + String(content) + "," + String(dateposted) + ");", function (error, results, fields) {
+      return res.json(results)
       // And done with the connection.
       connection.release();
       // Handle error after the release.
       if (error) throw error;
       // Don't use the connection here, it has been returned to the pool.
     });
- });
+  });
+});
+
+router.get('/getuser', function(req, res, next) {
+  pool.getConnection(function(err, connection) {
+    // Use the connection
+    var id = 82; // get the id 
+    connection.query('select * from accounts where id = ' + String(id), function (error, results, fields) {
+      return res.json(results)
+      // And done with the connection.
+      connection.release();
+      // Handle error after the release.
+      if (error) throw error;
+      // Don't use the connection here, it has been returned to the pool.
+    });
+  });
 });
 module.exports = router;
